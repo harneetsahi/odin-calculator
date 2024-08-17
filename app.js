@@ -11,3 +11,8 @@ const digitsBtn = document.querySelectorAll(".digitBtn");
 const operatorBtn = document.querySelectorAll(".operatorBtn");
 
 const clearBtn = document.querySelector(".clear-btn");
+
+let firstNumber = null;
+let firstOperator = null;
+let secondNumber = null;
+let displayValue = 0;
