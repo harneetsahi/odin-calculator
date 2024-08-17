@@ -16,3 +16,11 @@ let firstNumber = null;
 let firstOperator = null;
 let secondNumber = null;
 let displayValue = 0;
+
+////---------//// Populate Display
+
+function updateDisplay() {
+  display.innerText = displayValue;
+}
+
+updateDisplay();
