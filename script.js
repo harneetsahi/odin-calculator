@@ -169,3 +169,118 @@ function calculation() {
 function roundNum(num) {
   return Math.round(num * 1000) / 1000;
 }
+
+//// -----------//// Keyboard functionality
+
+document.addEventListener("keydown", (e) => {
+  switch (e.key) {
+    case "1":
+      digitClicked(e.key);
+      break;
+
+    case "2":
+      digitClicked(e.key);
+      break;
+
+    case "3":
+      digitClicked(e.key);
+      break;
+
+    case "4":
+      digitClicked(e.key);
+      break;
+
+    case "5":
+      digitClicked(e.key);
+      break;
+
+    case "6":
+      digitClicked(e.key);
+      break;
+
+    case "7":
+      digitClicked(e.key);
+      break;
+
+    case "8":
+      digitClicked(e.key);
+      break;
+
+    case "9":
+      digitClicked(e.key);
+      break;
+
+    case "0":
+      digitClicked(e.key);
+      break;
+
+    case "+":
+      operate("+");
+      addBtn.focus();
+      break;
+
+    case "-":
+      operate("-");
+      minusBtn.focus();
+      break;
+
+    case "*":
+      operate("x");
+      multiplyBtn.focus();
+      break;
+
+    case "/":
+      operate("/");
+      divideBtn.focus();
+      break;
+
+    case "Enter":
+      if (currentValue != "" && previousValue != "") {
+        calculation();
+
+        previousDisplay.textContent = "";
+        currentDisplay.textContent = result;
+
+        currentValue = result;
+        previousValue = "";
+      }
+      break;
+
+    case "=":
+      if (currentValue != "" && previousValue != "") {
+        calculation();
+
+        previousDisplay.textContent = "";
+        currentDisplay.textContent = result;
+
+        currentValue = result;
+        previousValue = "";
+      }
+      break;
+
+    case "Backspace":
+      currentValue = currentValue.toString();
+      let currentValueArr = currentValue.split("");
+      currentValueArr.pop();
+      currentValue = currentValueArr.join("");
+      currentDisplay.textContent = currentValue;
+      break;
+
+    case ".":
+      decimal();
+      break;
+
+   case "Escape":
+      currentDisplay.textContent = 0;
+      previousDisplay.textContent = "";
+
+      previousDisplay.textContent = "";
+      currentDisplay.textContent = 0;
+
+      resetValues();
+      break;
+
+    default:
+      break;
+  }
+});
