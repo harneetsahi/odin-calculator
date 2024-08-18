@@ -54,5 +54,53 @@ operatorBtn.forEach((btn) => {
   });
 });
 
+//// -----------//// calculation
+
+function calculation() {
+  secondNumber = displayValue;
+
+  displayInfo = "";
+
+  switch (operator) {
+    case "+":
+      let sum = add(firstNumber, secondNumber);
+
+      if (!Number.isInteger(sum)) {
+        sum = sum.toFixed(2);
+      }
+      display.textContent = sum;
+      return sum;
+
+    case "-":
+      let difference = subtract(firstNumber, secondNumber);
+
+      if (!Number.isInteger(difference)) {
+        difference = difference.toFixed(2);
+      }
+      display.innerText = difference;
+      return difference;
+
+    case "*":
+      let multiplication = multiply(firstNumber, secondNumber);
+
+      if (!Number.isInteger(multiplication)) {
+        multiplication = multiplication.toFixed(2);
+      }
+      display.innerText = multiplication;
+      return multiplication;
+
+    case "/":
+      let division = divide(firstNumber, secondNumber);
+
+      if (!Number.isInteger(division)) {
+        division = division.toFixed(2);
+      }
+      display.innerText = division;
+      return division;
+
+    default:
+      break;
+  }
+}
 
 
