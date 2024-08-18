@@ -22,6 +22,8 @@ let operator = "";
 let result = "";
 
 ////-------//////  digit function
+// (commented out below function can be used if no keyboard support is required)
+// I broke down the commented out part into functions so keys can also access them.
 
 // digitsBtn.forEach((digit) => {
 //   digit.addEventListener("click", (e) => {
@@ -39,6 +41,8 @@ let result = "";
 //     currentDisplay.textContent = currentValue;
 //   });
 // });
+
+//// Keyboard supported function
 
 digitsBtn.forEach((digit) => {
   digit.addEventListener("click", (e) => {
@@ -60,6 +64,9 @@ function digitClicked(num) {
 }
 
 ////-------//////  operator function
+// (commented out below function can be used if no keyboard support is required)
+// I broke down the commented out part into functions so keys can also access them.
+
 
 // operatorBtn.forEach((opBtn) => {
 //   opBtn.addEventListener("click", (e) => {
@@ -74,6 +81,8 @@ function digitClicked(num) {
 //     currentDisplay.textContent = "";
 //   });
 // });
+
+//// Keyboard supported function
 
 operatorBtn.forEach((opBtn) => {
   opBtn.addEventListener("click", (e) => {
