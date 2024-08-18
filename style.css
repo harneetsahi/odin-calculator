@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-  width: 300px;
+  width: 280px;
   margin-top: 1rem;
   border-radius: 15px;
 
@@ -19,11 +19,11 @@ body {
 }
 
 .display {
-  padding: 2rem 0.5rem 0.5rem 0.5rem;
+  padding: 2rem 0.5rem 0.2rem 0.5rem;
   background-color: rgba(63, 61, 61, 0.899);
-}
+ height: 55px;
+  line-height: 55px;
 
-.display p {
   color: white;
   font-family: sans-serif;
   font-size: 2rem;
@@ -47,6 +47,11 @@ button {
   color: white;
   font-size: 1.4rem;
   border: 0.1px solid rgb(93, 92, 92);
+  transition: opacity 0.01s ease-in-out;
+}
+
+button:active {
+  opacity: 0.5;
 }
 
 .clear-btn {
@@ -66,4 +71,8 @@ button {
 .operator-btns button {
   background-color: rgb(250, 163, 3);
   font-size: 1.8rem;
+}
+
+.operatorBtn:focus {
+  border: 2px solid rgb(114, 74, 0);
 }
