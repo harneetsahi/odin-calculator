@@ -137,3 +137,19 @@ decimalBtn.addEventListener("click", () => {
     displayValue = +displayInfo;
   }
 });
+
+//// -----------//// clear display
+
+clearBtn.addEventListener("click", () => {
+  displayValue = 0;
+  display.innerHTML = displayValue;
+
+  resetValues();
+});
+
+function resetValues() {
+  firstNumber = null;
+  secondNumber = null;
+  operator = null;
+  displayInfo = "";
+}
