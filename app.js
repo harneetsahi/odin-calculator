@@ -153,3 +153,139 @@ function resetValues() {
   operator = null;
   displayInfo = "";
 }
+
+//// -----------//// Keyboard functionality
+
+document.addEventListener("keydown", (e) => {
+  switch (e.key) {
+    case "1":
+      keyboardfunction(e);
+      break;
+
+    case "2":
+      keyboardfunction(e);
+      break;
+
+    case "3":
+      keyboardfunction(e);
+      break;
+
+    case "4":
+      keyboardfunction(e);
+      break;
+
+    case "5":
+      keyboardfunction(e);
+      break;
+
+    case "6":
+      keyboardfunction(e);
+      break;
+
+    case "7":
+      keyboardfunction(e);
+      break;
+
+    case "8":
+      keyboardfunction(e);
+      break;
+
+    case "9":
+      keyboardfunction(e);
+      break;
+
+    case "0":
+      keyboardfunction(e);
+      break;
+
+    case "+":
+      if (firstNumber) {
+        calculation();
+      } else {
+        firstNumber = displayValue;
+      }
+
+      operator = "+";
+      addBtn.focus();
+      displayInfo = "";
+      break;
+
+    case "-":
+      if (firstNumber) {
+        calculation();
+      } else {
+        firstNumber = displayValue;
+      }
+
+      operator = "-";
+      minusBtn.focus();
+      displayInfo = "";
+      break;
+
+    case "*":
+      if (firstNumber) {
+        calculation();
+      } else {
+        firstNumber = displayValue;
+      }
+
+      operator = "*";
+      multiplyBtn.focus();
+      displayInfo = "";
+      break;
+
+    case "/":
+      if (firstNumber) {
+        calculation();
+      } else {
+        firstNumber = displayValue;
+      }
+
+      operator = "/";
+      divideBtn.focus();
+      displayInfo = "";
+      break;
+
+    case "Enter":
+      calculation();
+      resetValues();
+      break;
+
+    case "=":
+      calculation();
+      resetValues();
+      break;
+
+    case "Backspace":
+      displayInfo = displayInfo.toString();
+      let displayArr = displayInfo.split("");
+      displayArr.pop();
+      displayInfo = displayArr.join("");
+      display.innerText = displayInfo;
+      displayValue = +displayInfo;
+
+      break;
+
+    case ".":
+      if (!displayInfo.includes(".")) {
+        displayInfo += ".";
+        display.innerText = displayInfo;
+        displayValue = +displayInfo;
+      }
+      break;
+
+    case "Escape":
+      resetValues();
+      operatorBtn.forEach((btn) => {
+        btn.blur();
+      });
+      display.innerText = 0;
+  }
+});
+
+function keyboardfunction(e) {
+  displayInfo += e.key;
+  displayValue = +displayInfo;
+  display.innerText = displayInfo;
+}
+
