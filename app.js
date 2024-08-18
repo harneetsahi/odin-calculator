@@ -26,5 +26,33 @@ let displayInfo = '';
 
 display.innerText = displayValue;
 
+digitsBtn.forEach((digit) => {
+  digit.addEventListener("click", (e) => {
+    let inputDigit = e.target.innerText;
+    displayInfo += inputDigit;
+
+    displayValue = +displayInfo; // converting to number
+    display.innerText = displayValue;
+  });
+});
+
+//// -----------//// operator clicked
+
+operatorBtn.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    if (firstNumber) {
+      // firstNumber = calculation();
+
+      calculation();
+    } else {
+      firstNumber = displayValue;
+    }
+
+    operator = e.target.innerText;
+
+    displayInfo = "";
+  });
+});
+
 
 
