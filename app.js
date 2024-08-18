@@ -121,4 +121,9 @@ function divide(a, b) {
   return a / b;
 }
 
+//// -----------//// Equal button functionality
 
+equalBtn.addEventListener("click", () => {
+  calculation();
+  resetValues();
+});
