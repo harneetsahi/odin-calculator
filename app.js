@@ -127,3 +127,13 @@ equalBtn.addEventListener("click", () => {
   calculation();
   resetValues();
 });
+
+//// -----------//// decimal point button functionality
+
+decimalBtn.addEventListener("click", () => {
+  if (!displayInfo.includes(".")) {
+    displayInfo += ".";
+    display.innerText = displayInfo;
+    displayValue = +displayInfo;
+  }
+});
