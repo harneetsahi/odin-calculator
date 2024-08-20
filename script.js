@@ -1,8 +1,9 @@
+// display
 const display = document.querySelector(".display");
 const currentDisplay = document.querySelector(".current");
 const previousDisplay = document.querySelector(".previous");
 
-// operators
+// operators and digits
 const divideBtn = document.querySelector(".divide-btn");
 const multiplyBtn = document.querySelector(".multiply-btn");
 const minusBtn = document.querySelector(".minus-btn");
@@ -15,6 +16,7 @@ const operatorBtn = document.querySelectorAll(".operatorBtn");
 
 const clearBtn = document.querySelector(".clear-btn");
 
+// initial variables
 let previousValue = "";
 let currentValue = "";
 
@@ -42,7 +44,7 @@ let result = "";
 //   });
 // });
 
-//// Keyboard supported function
+//// Keyboard supported function (digits)
 
 digitsBtn.forEach((digit) => {
   digit.addEventListener("click", (e) => {
@@ -82,7 +84,7 @@ function digitClicked(num) {
 //   });
 // });
 
-//// Keyboard supported function
+//// Keyboard supported function (operators)
 
 operatorBtn.forEach((opBtn) => {
   opBtn.addEventListener("click", (e) => {
@@ -142,7 +144,7 @@ function resetValues() {
   operator = "";
 }
 
-////-------//////  calc function
+////-------//////  calculator function
 
 function calculation() {
   previousValue = Number(previousValue);
@@ -170,7 +172,7 @@ function roundNum(num) {
   return Math.round(num * 1000) / 1000;
 }
 
-//// -----------//// Keyboard functionality
+//// -----------//// Keyboard support functionality
 
 document.addEventListener("keydown", (e) => {
   switch (e.key) {
