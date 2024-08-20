@@ -57,6 +57,7 @@ function digitClicked(num) {
     currentValue += num;
   }
 
+  // below code assigns allows user to start a new operation without necessarily clearing the display.
   if (result != "") {
     currentValue = "";
     result = "";
